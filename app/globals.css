@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #010103;
+  --foreground: #ffffff;
+  --font-manrope: var(--font-manrope);
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-manrope), var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --color-dark-bg: #010103;
+  --color-dark-card: #0B0B14;
+  --color-dark-card-hover: #121222;
+  --color-dark-card2: #191938;
+  --color-primary: #5C53FE;
+  --color-primary-hover: #4E45E8;
+  --color-secondary: #F7C2FF;
+  --color-tertiary: #DC02CE;
+  --color-stroke: #6661FF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #010103;
+  color: #ffffff;
+  font-family: var(--font-manrope), var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #010103;
+}
+::-webkit-scrollbar-thumb {
+  background: #191938;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5C53FE;
+}
+
+/* Figma glow effects */
+.radial-glow-purple {
+  background: radial-gradient(circle at 50% 0%, rgba(92, 83, 254, 0.25) 0%, rgba(220, 2, 206, 0.12) 35%, rgba(1, 1, 3, 0) 70%);
+}
+
+.radial-glow-center {
+  background: radial-gradient(circle at 50% 50%, rgba(92, 83, 254, 0.18) 0%, rgba(247, 194, 255, 0.05) 40%, rgba(1, 1, 3, 0) 75%);
+}
+
+.glass-card {
+  background: rgba(11, 11, 20, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(102, 97, 255, 0.18);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(92, 83, 254, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(92, 83, 254, 0.25);
 }
