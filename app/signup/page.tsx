@@ -31,7 +31,7 @@ export default function SignUpPage() {
     <div className="min-h-screen flex bg-[#010103] text-white selection:bg-[#5C53FE]/30 selection:text-white">
       {/* Left Form Panel */}
       <div className="flex-1 flex flex-col justify-between px-6 py-10 sm:px-12 lg:px-16 xl:px-24">
-        {/* Top */}
+        {/* Top header*/}
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center">
             <Image
