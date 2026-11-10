@@ -31,7 +31,7 @@ export default function SignUpPage() {
     <div className="min-h-screen flex bg-[#010103] text-white selection:bg-[#5C53FE]/30 selection:text-white">
       {/* Left Form Panel */}
       <div className="flex-1 flex flex-col justify-between px-6 py-10 sm:px-12 lg:px-16 xl:px-24">
-        {/* Top Header */}
+        {/* Top */}
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center">
             <Image
@@ -68,8 +68,8 @@ export default function SignUpPage() {
               type="button"
               onClick={() => setRole("seeker")}
               className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${role === "seeker"
-                  ? "bg-[#5C53FE] text-white shadow-md shadow-[#5C53FE]/30"
-                  : "text-zinc-400 hover:text-white"
+                ? "bg-[#5C53FE] text-white shadow-md shadow-[#5C53FE]/30"
+                : "text-zinc-400 hover:text-white"
                 }`}
             >
               <User className="w-4 h-4" />
@@ -79,8 +79,8 @@ export default function SignUpPage() {
               type="button"
               onClick={() => setRole("recruiter")}
               className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${role === "recruiter"
-                  ? "bg-[#5C53FE] text-white shadow-md shadow-[#5C53FE]/30"
-                  : "text-zinc-400 hover:text-white"
+                ? "bg-[#5C53FE] text-white shadow-md shadow-[#5C53FE]/30"
+                : "text-zinc-400 hover:text-white"
                 }`}
             >
               <Briefcase className="w-4 h-4" />

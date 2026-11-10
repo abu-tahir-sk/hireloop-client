@@ -4,6 +4,7 @@
   --background: #010103;
   --foreground: #ffffff;
   --font-manrope: var(--font-manrope);
+  --font-space-mono: var(--font-space-mono);
   --font-geist-sans: var(--font-geist-sans);
   --font-geist-mono: var(--font-geist-mono);
 }
@@ -12,7 +13,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-manrope), var(--font-geist-sans), sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-mono: var(--font-space-mono), monospace;
   --color-dark-bg: #010103;
   --color-dark-card: #0B0B14;
   --color-dark-card-hover: #121222;

@@ -50,7 +50,7 @@ export default function Navbar() {
 
             <Link
               href="/signin"
-              className="text-sm text-zinc-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-[#5C53FE] hover:text-[#4E45E8] transition-colors"
             >
               Sign In
             </Link>
