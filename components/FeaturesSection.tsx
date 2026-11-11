@@ -1,13 +1,14 @@
 import {
   Search,
-  DollarSign,
-  Building2,
-  BookmarkCheck,
+  ChartPie,
+  BarChart3,
+  Bookmark,
   MousePointerClick,
   FileText,
   Target,
-  GraduationCap,
+  TrendingUp,
 } from "lucide-react";
+import SectionBadge from "./SectionBadge";
 
 export default function FeaturesSection() {
   const features = [
@@ -19,17 +20,17 @@ export default function FeaturesSection() {
     {
       title: "Salary Insights",
       description: "Get real salary data to negotiate confidently.",
-      icon: DollarSign,
+      icon: ChartPie,
     },
     {
       title: "Top Companies",
       description: "Apply to vetted companies that are hiring.",
-      icon: Building2,
+      icon: BarChart3,
     },
     {
       title: "Saved Jobs",
       description: "Manage apps & favorites on your dashboard.",
-      icon: BookmarkCheck,
+      icon: Bookmark,
     },
     {
       title: "One-Click Apply",
@@ -49,43 +50,38 @@ export default function FeaturesSection() {
     {
       title: "Career Growth Resources",
       description: "Boost your career with quick interview tips.",
-      icon: GraduationCap,
+      icon: TrendingUp,
     },
   ];
 
   return (
-    <section id="features" className="relative py-20 md:py-28 bg-[#010103] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header matching Figma */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-3 text-xs font-semibold tracking-wider text-[#5C53FE] mb-3">
-            <span className="w-6 h-px bg-[#5C53FE]" />
-            <span>features job</span>
-            <span className="w-6 h-px bg-[#5C53FE]" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Everything you need to succeed
-          </h2>
-        </div>
+    <section id="company" className="bg-[#151516] py-24 lg:py-[120px]">
+      <div className="mx-auto w-full max-w-[1320px] px-4">
+        {/* Header — badge + Manrope SemiBold 48 */}
+        <SectionBadge label="features job" />
+        <h2 className="mx-auto mt-4 max-w-[500px] text-center font-sans text-3xl font-semibold leading-snug text-white sm:text-4xl lg:mt-6 lg:text-[48px] lg:leading-[55px]">
+          Everything you need to succeed
+        </h2>
 
-        {/* 8 Feature Cards Grid (4 cols x 2 rows) matching Figma */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 4x2 grid, col gap 24 / row gap 48 */}
+        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 sm:mt-16 lg:grid-cols-4">
           {features.map((feature, idx) => {
             const Icon = feature.icon;
             return (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-[#0B0B14] border border-zinc-800/90 hover:border-zinc-700 transition-all flex flex-col justify-start"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#141422] border border-zinc-800 flex items-center justify-center text-zinc-300 mb-5">
-                  <Icon className="w-5 h-5 text-zinc-300" />
+              <div key={idx} className="flex gap-6">
+                {/* Icon tile 80x80 — gradient #010102→#313131, border white/10, radius 8 */}
+                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-gradient-to-b from-[#010102] to-[#313131]">
+                  <Icon className="h-8 w-8 text-[#F7C2FF]" strokeWidth={2} />
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  {feature.description}
-                </p>
+                {/* Text (gap 8) */}
+                <div className="pt-1">
+                  <h3 className="font-inter-tight text-lg font-medium leading-[25px] text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 font-inter-tight text-base leading-[26px] text-white/70">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             );
           })}

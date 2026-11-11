@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Manrope, Space_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Manrope,
+  Space_Mono,
+  Inter,
+  Inter_Tight,
+  Plus_Jakarta_Sans,
+  Rethink_Sans,
+  Instrument_Sans,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,13 +25,43 @@ const geistMono = Geist_Mono({
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const rethink = Rethink_Sans({
+  variable: "--font-rethink",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +79,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${spaceMono.variable} dark h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${spaceMono.variable} ${inter.variable} ${interTight.variable} ${jakarta.variable} ${rethink.variable} ${instrument.variable} dark h-full antialiased`}
     >
       <body
         suppressHydrationWarning

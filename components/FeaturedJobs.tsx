@@ -1,7 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { MapPin, Briefcase, DollarSign, ArrowRight } from "lucide-react";
+import SectionBadge from "./SectionBadge";
 
 export interface JobItem {
   id: string;
@@ -63,74 +62,66 @@ export const sampleJobs: JobItem[] = [
   },
 ];
 
+function Chip({ icon, text }: { icon: React.ReactNode; text: string }) {
+  return (
+    <div className="flex h-9 items-center gap-2 rounded-full bg-[#1F1F1F] px-4">
+      <span className="flex h-4 w-4 items-center justify-center text-white">{icon}</span>
+      <span className="font-inter-tight text-sm font-medium text-white">{text}</span>
+    </div>
+  );
+}
+
 export default function FeaturedJobs() {
   return (
-    <section id="browse" className="relative py-20 md:py-28 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header matching Figma Screenshot */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-3 text-xs font-semibold tracking-wider text-[#5C53FE] mb-3">
-            <span className="w-6 h-px bg-[#5C53FE]" />
-            <span>Smart job discovery</span>
-            <span className="w-6 h-px bg-[#5C53FE]" />
-          </div>
+    <section id="browse" className="relative z-10 pt-24 pb-[120px] lg:pt-[120px]">
+      <div className="mx-auto w-full max-w-[1320px] px-4">
+        {/* Header — badge + Manrope SemiBold 48 */}
+        <SectionBadge label="Smart job discovery" />
+        <h2 className="mx-auto mt-4 max-w-[520px] text-center font-sans text-3xl font-semibold leading-snug text-white sm:text-4xl lg:text-[48px] lg:leading-[55px]">
+          The roles you&apos;d never find by searching
+        </h2>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-            The roles you&apos;d never find by searching
-          </h2>
-        </div>
-
-        {/* 6 Job Cards Grid (3 cols x 2 rows) matching Figma */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* 3x2 grid, gap 24 */}
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {sampleJobs.map((job) => (
             <div
               key={job.id}
-              className="p-6 sm:p-7 rounded-2xl bg-[#0B0B14] border border-zinc-800/90 hover:border-zinc-700 transition-all flex flex-col justify-between"
+              className="flex flex-col gap-8 rounded-3xl bg-[#151516] p-7 transition-colors hover:bg-[#1a1a1c] sm:p-10 lg:h-[363px]"
             >
-              <div>
-                <h3 className="text-lg font-bold text-white mb-2.5">
+              {/* Title + description (gap 12) */}
+              <div className="flex flex-col gap-3">
+                <h3 className="font-inter text-2xl font-medium leading-[1.3] text-white sm:text-[32px] sm:leading-[42px]">
                   {job.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                <p className="font-inter text-base leading-[27px] text-white/60">
                   {job.description}
                 </p>
-
-                {/* Job Details Meta */}
-                <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-400 mb-6">
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-zinc-500" />
-                    <span>{job.location}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Briefcase className="w-3.5 h-3.5 text-zinc-500" />
-                    <span>{job.schedule}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <DollarSign className="w-3.5 h-3.5 text-zinc-500" />
-                    <span>{job.salary}</span>
-                  </div>
-                </div>
               </div>
 
-              {/* Apply Now Action matching Figma */}
-              <div className="pt-4 border-t border-zinc-900">
-                <Link
-                  href={`/jobs/${job.id}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-white hover:text-[#5C53FE] transition-colors"
-                >
-                  <span>Apply Now</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+              {/* Meta chips (bg #1F1F1F, radius 24, icon 16, Inter Tight Medium 14) */}
+              <div className="mt-auto flex flex-wrap gap-2">
+                <Chip icon={<MapPin className="h-4 w-4" strokeWidth={1.5} />} text={job.location} />
+                <Chip icon={<Briefcase className="h-4 w-4" strokeWidth={1.5} />} text={job.schedule} />
+                <Chip icon={<DollarSign className="h-4 w-4" strokeWidth={1.5} />} text={job.salary} />
               </div>
+
+              {/* Apply Now (Manrope SemiBold 16 + arrow 24) */}
+              <Link
+                href={`/jobs/${job.id}`}
+                className="inline-flex items-center gap-1 font-sans text-base font-semibold text-white transition-colors hover:text-[#5C53FE]"
+              >
+                <span>Apply Now</span>
+                <ArrowRight className="h-6 w-6" />
+              </Link>
             </div>
           ))}
         </div>
 
-        {/* View all job open - Solid White Pill Button with Black Text */}
-        <div className="text-center">
+        {/* View all button (188x58, white, radius 12) */}
+        <div className="mt-10 text-center">
           <Link
             href="/jobs"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-black bg-white hover:bg-zinc-200 transition-all shadow-lg cursor-pointer"
+            className="inline-flex h-[58px] items-center justify-center rounded-xl border border-[#090a15]/10 bg-white px-6 font-instrument text-lg font-medium text-[#0B0B14] transition-colors hover:bg-zinc-200"
           >
             View all job open
           </Link>
