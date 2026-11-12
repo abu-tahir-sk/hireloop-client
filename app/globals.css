@@ -76,3 +76,21 @@ body {
   border-color: rgba(92, 83, 254, 0.5);
   box-shadow: 0 12px 30px -10px rgba(92, 83, 254, 0.25);
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

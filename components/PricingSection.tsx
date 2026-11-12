@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react";
@@ -19,7 +18,7 @@ export default function PricingSection() {
         "Daily AI match brief (top 5)",
         "Verified salary bands",
         "Company insight dashboards",
-        "1‑click apply, unlimited",
+        "1 click apply, unlimited",
       ],
       href: "/signup",
     },
@@ -33,7 +32,7 @@ export default function PricingSection() {
         "Daily AI match brief (top 5)",
         "Verified salary bands",
         "Company insight dashboards",
-        "1‑click apply, unlimited",
+        "1 click apply, unlimited",
       ],
       href: "/checkout?plan=growth",
     },
@@ -56,30 +55,25 @@ export default function PricingSection() {
   return (
     <section id="pricing" className="relative z-10 py-24 lg:py-[120px]">
       <div className="mx-auto w-full max-w-[1320px] px-4">
-        {/* Header */}
         <SectionBadge label="Pricing" />
         <h2 className="mx-auto mt-4 max-w-[500px] text-center font-sans text-3xl font-semibold leading-snug text-white sm:text-4xl lg:mt-6 lg:text-[48px] lg:leading-[55px]">
           Pay for the leverage, not the listings
         </h2>
-
-        {/* Monthly / Yearly toggle — capsule white/15, radius 36, active white */}
         <div className="mt-12 flex justify-center sm:mt-16">
           <div className="flex w-fit items-center gap-2 rounded-[36px] border border-[#f6f6f6]/10 bg-white/15 p-2">
             <button
               type="button"
               onClick={() => setIsYearly(false)}
-              className={`flex h-[43px] cursor-pointer items-center rounded-full border border-[#090a15]/10 px-6 font-inter text-base font-medium transition-all sm:text-lg ${
-                !isYearly ? "bg-white text-[#010103]" : "bg-[#090a15]/5 text-white"
-              }`}
+              className={`flex h-[43px] cursor-pointer items-center rounded-full border border-[#090a15]/10 px-6 font-inter text-base font-medium transition-all sm:text-lg ${!isYearly ? "bg-white text-[#010103]" : "bg-[#090a15]/5 text-white"
+                }`}
             >
               Monthly
             </button>
             <button
               type="button"
               onClick={() => setIsYearly(true)}
-              className={`flex h-[43px] cursor-pointer items-center gap-2 rounded-full border border-[#090a15]/10 px-6 font-inter text-base font-medium transition-all sm:text-lg ${
-                isYearly ? "bg-white text-[#010103]" : "bg-[#090a15]/5 text-white"
-              }`}
+              className={`flex h-[43px] cursor-pointer items-center gap-2 rounded-full border border-[#090a15]/10 px-6 font-inter text-base font-medium transition-all sm:text-lg ${isYearly ? "bg-white text-[#010103]" : "bg-[#090a15]/5 text-white"
+                }`}
             >
               <span>Yearly</span>
               <span className="rounded-full bg-[#DC02CE] px-2 py-0.5 font-geist text-xs text-white sm:text-base">
@@ -88,8 +82,6 @@ export default function PricingSection() {
             </button>
           </div>
         </div>
-
-        {/* 3 price cards — 424x450, radius 24, gap 24 */}
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
           {plans.map((plan, idx) => {
             const price = isYearly ? plan.priceYearly : plan.priceMonthly;
@@ -97,14 +89,12 @@ export default function PricingSection() {
             return (
               <div
                 key={idx}
-                className={`flex flex-col justify-between gap-8 rounded-3xl p-6 lg:h-[450px] ${
-                  plan.featured
+                className={`flex flex-col justify-between gap-8 rounded-3xl p-6 lg:h-[450px] ${plan.featured
                     ? "border border-white/20 bg-[#151516]"
                     : "border border-[#F6EFE1]/20 bg-[#010103]"
-                }`}
+                  }`}
               >
                 <div>
-                  {/* Header: icon+title | price */}
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#595959]/40">
@@ -119,8 +109,6 @@ export default function PricingSection() {
                       <span className="font-inter-tight text-sm text-white">/month</span>
                     </div>
                   </div>
-
-                  {/* Features */}
                   <div className="mt-8">
                     <p className="font-inter text-lg font-medium leading-[27px] text-white">
                       Start building your insights hub:
@@ -137,15 +125,12 @@ export default function PricingSection() {
                     </ul>
                   </div>
                 </div>
-
-                {/* Button — h 55, radius 12; white on featured, #595959/50 on others */}
                 <Link
                   href={plan.href}
-                  className={`flex h-[55px] items-center justify-center gap-1 rounded-xl font-sans text-base font-semibold transition-all ${
-                    plan.featured
+                  className={`flex h-[55px] items-center justify-center gap-1 rounded-xl font-sans text-base font-semibold transition-all ${plan.featured
                       ? "bg-white text-[#010103] hover:bg-zinc-200"
                       : "bg-[#595959]/50 text-white hover:bg-[#595959]/70"
-                  }`}
+                    }`}
                 >
                   <span>Choose This Plan</span>
                   <ArrowRight className="h-6 w-6" />

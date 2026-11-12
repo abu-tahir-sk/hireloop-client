@@ -25,32 +25,29 @@ export default function DashboardStats() {
   ];
 
   return (
-    <section className="relative z-10 pt-[200px] sm:pt-[300px] lg:pt-[452px]">
-      <div className="mx-auto w-full max-w-[1320px] px-4">
-        {/* Heading — Instrument Sans Medium 40, white/70 (Figma Frame 2147234448) */}
-        <h2 className="mx-auto max-w-[600px] text-center font-instrument text-2xl font-medium leading-snug text-white/70 sm:text-3xl lg:text-[40px] lg:leading-[52px]">
-          Assisting over 15,000 job seekers find their dream positions.
+    <section className="relative z-10 pt-[160px] sm:pt-[240px] lg:pt-[320px]">
+      <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
+        <h2 className="mx-auto max-w-[620px] text-center font-sans text-2xl font-medium leading-snug text-white/70 sm:text-3xl lg:text-[40px] lg:leading-[52px]">
+          Assisting over{" "}
+          <span className="font-semibold text-white">15,000 job seekers</span>{" "}
+          find their dream positions.
         </h2>
-
-        {/* 4 stat cards — gradient #010102→#313131, border white/10, radius 16, 312x254 */}
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
               <div
                 key={idx}
-                className="flex h-auto min-h-[220px] flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-[#010102] to-[#313131] p-6 lg:h-[254px] lg:p-7"
+                className="flex h-auto min-h-[220px] flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-[#010102] via-[#121212] to-[#252525] p-6 lg:h-[254px] lg:p-7 shadow-xl shadow-black/40 transition-transform duration-200 hover:-translate-y-1"
               >
-                {/* Icon 24, white */}
                 <div className="flex h-6 w-6 items-center justify-center">
-                  <Icon className="h-6 w-6 text-white" strokeWidth={1.5} />
+                  <Icon className="h-6 w-6 text-white" strokeWidth={1.75} />
                 </div>
-
                 <div>
-                  <div className="font-jakarta text-4xl font-semibold leading-none text-white sm:text-5xl lg:text-[56px]">
+                  <div className="font-jakarta text-4xl font-semibold leading-none tracking-tight text-white sm:text-5xl lg:text-[56px]">
                     {stat.value}
                   </div>
-                  <div className="mt-4 font-inter-tight text-base leading-[30px] text-white sm:text-lg">
+                  <div className="mt-4 font-inter-tight text-sm sm:text-base lg:text-lg leading-normal text-white/80">
                     {stat.label}
                   </div>
                 </div>
