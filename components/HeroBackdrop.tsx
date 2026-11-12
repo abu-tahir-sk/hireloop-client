@@ -24,7 +24,7 @@ export default function HeroBackdrop() {
         />
       </div>
 
-      {/* Bottom fade out smoothly into stats and next section */}
+      {/* Bottom fade out smoothly  stats and next section */}
       <div className="absolute bottom-0 inset-x-0 h-64 bg-gradient-to-t from-[#010103] via-[#010103]/80 to-transparent z-20 pointer-events-none" />
     </div>
   );
