@@ -22,7 +22,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
 
   return (
     <section className="relative z-10 pt-[50px] sm:pt-[70px] lg:pt-[90px]">
-      <div className="mx-auto w-full max-w-[784px] px-4 sm:px-0 text-center">
+      <div className="mx-auto w-full  px-4 sm:px-0 text-center">
         {/* Announcement badge — Figma Frame 2147234462/2147234446 */}
         <div className="flex items-center justify-center gap-0">
           {/* Left flanking line (64px, gradient) */}
