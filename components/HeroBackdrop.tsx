@@ -12,7 +12,7 @@ export default function HeroBackdrop() {
       {/* Atmospheric blue/purple rim glow behind the Earth globe curvature spanning full width */}
       <div className="absolute top-[620px] left-1/2 -translate-x-1/2 w-full max-w-[1600px] h-[550px] bg-[#5C53FE]/25 blur-[140px] rounded-full z-0 pointer-events-none" />
 
-
+      {/* Earth Globe Image - Full Screen Width */}
       <div className="relative w-full flex justify-center">
         <Image
           src="/images/earth_globe.png"
